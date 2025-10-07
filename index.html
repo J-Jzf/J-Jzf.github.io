@@ -1,1 +1,470 @@
-<h1> WELCOME <h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junfeng Zhu（朱俊枫） - HomePage</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏样式 */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3498db;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* 主要内容区域 */
+        main {
+            flex: 1;
+            padding: 40px 0;
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        /* 侧边栏样式 */
+        aside {
+            width: 300px;
+            padding: 40px 0 40px 30px;
+        }
+        
+        .profile-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            border: 4px solid #f0f0f0;
+        }
+        
+        .profile-name {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .profile-title {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .profile-details {
+            margin-bottom: 20px;
+        }
+        
+        .profile-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-details i {
+            margin-right: 10px;
+            color: #3498db;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* 新闻和出版物样式 */
+        .news-item, .publication-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .news-item:last-child, .publication-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-date {
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+        
+        .publication-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .publication-authors {
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+        
+        .publication-venue {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .publication-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .publication-link:hover {
+            text-decoration: underline;
+        }
+
+      .publication-content {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .publication-date {
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .publication-image {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+        
+        .publication-text {
+            flex: 1;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            aside {
+                width: 100%;
+                padding-left: 0;
+            }
+            
+            .profile-card {
+                position: static;
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0 10px 10px;
+            }
+        }
+
+      @media (max-width: 768px) {
+          .publication-content {
+              flex-direction: column;
+          }
+          
+          .publication-image {
+              width: 100%;
+              max-width: 200px;
+              margin: 0 auto 15px;
+          }
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Junfeng Zhu</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Homepage</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#internship">Internship</a></li>
+                    <li><a href="#honors">Honors and Awards</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#else">Else</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- 主要内容 -->
+        <main>
+            <!-- 自我介绍部分 -->
+            <section id="home" class="content-section">
+                <h2 class="section-title">Self-Intro</h2>
+                <p>Hi there! My name is Junfeng ZHU (朱俊枫),</p>
+                <p>I am currently a Master's student pursuing an academic degree in Computer Science and Technology at the School of Computer Science and Engineering, Shanghai University, holding a Bachelor's degree in Artificial Intelligence from Shanghai University. </p>
+                <p>My research interests lie in pattern recognition, data analysis, multimodal learning, domain adaptation learning, and AI4Sci, under the supervision of <a href="https://scholar.google.com/citations?hl=en&user=Gf80gIIAAAAJ&view_op=list_works" target="_blank" style="color: #3498db; text-decoration: none;">Professor Yuchun Fang</a>.</p>
+            </section>
+            
+            <!-- 新闻部分 -->
+            <section id="news" class="content-section">
+                <h2 class="section-title">🔥News</h2>
+                <div class="news-item">
+                    <div class="news-date">2026.09</div>
+                    <p>🎉🎉Recommended admission with waiver of entrance examination to the School of Computer Engineering and Science, Shanghai University, to pursue a Master's degree in Computer Science and Technology.</p>
+                </div>
+            </section>
+            
+            <!-- 出版物部分 -->
+            <section id="publications" class="content-section">
+                <h2 class="section-title">📝Publications</h2>
+                <div class="publication-item">
+                    <div class="publication-content">
+                        <img src="images/cvippr2025.png" alt="Paper Figure" class="publication-image">
+                        <div class="publication-text">
+                            <div class="publication-date">July 2025</div>
+                            <div class="publication-title">1+ 1> 2: achieving enhanced global pattern recognition with FSA-ResNet</div>
+                            <div class="publication-authors">J Zhu</div>
+                            <div class="publication-venue">Third Asia Conference on Computer Vision, Image Processing, and Pattern Recognition (CVIPPR 2025) 2025 Jul 21 (Vol. 13697, pp. 168-176). SPIE.</div>
+                            <a href="https://doi.org/10.1117/12.3076243" class="publication-link">LINK(SPIE Library)</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 实习经历部分 -->
+            <section id="honors" class="internship">
+                <h2 class="section-title">💻Internship</h2>
+                <p>From July 2024 to August 2024, completed a quantitative engineer internship at Shanghai Jiuqianyi Software Co., Ltd. Main responsibilities included:</p>
+                <p style="text-indent: 2em;">1. Developed TWAP strategy code using C++ and gained exposure to multi-factor stock selection;</p>
+                <p style="text-indent: 2em;">2. Utilized Python with Xuntou API to detect post-trade position information through callback functions and pushed results to the corporate WeChat work group;</p>
+                <p style="text-indent: 2em;">3. Processed nearly 15 years of tick data for all futures products across exchanges in the weighted database using Python to facilitate subsequent backtesting.</p>
+            </section>
+            
+            <!-- 荣誉奖项部分 -->
+            <section id="honors" class="content-section">
+                <h2 class="section-title">🎖Honors and Awards</h2>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li>  - 2025.05 | Meritorious Winner, Mathematical Contest in Modeling (MCM)</li>
+                    <li>  - 2025.04 | Third Prize, Huawei Software Elite Challenge</li>
+                    <li>  - 2024.06 | Award of Excellence, Huawei Intelligent Connect Cup Wireless Programming Competition</li>
+                    <li>  - 2024.06 | Ministry of Industry and Information Technology, Industrial Internet Platform Development Engineer Competency Certification</li>
+                    <li>  - 2024.05 | Third Prize, 'LanQiao Cup' Shanghai Division - C/C++ University Group A</li>
+                    <li>  - 2025.02 | SHU Outstanding Student Award</li>
+                    <li>  - 2024.12 | SHU Academic Second Prize Scholarship & Self-Reliance Scholarship</li>
+                </ul>
+            </section>
+            
+            <!-- 教育背景部分 -->
+            <section id="education" class="content-section">
+                <h2 class="section-title">📖Education</h2>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li>  - 2026.09~Present: Master’s in CS, <a href="https://cs.shu.edu.cn/" target="_blank" style="color: #3498db; text-decoration: none;">School of CES, Shanghai University</a></li>
+                    <li>  - 2022.09~2026.06: Bachelor’s in AI, <a href="https://cs.shu.edu.cn/" target="_blank" style="color: #3498db; text-decoration: none;">School of CES, Shanghai University</a></li>
+                </ul>
+            </section>
+
+            <!-- 其他部分 -->
+            <section id="else" class="content-section">
+                <h2 class="section-title">Something Else</h2>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li>  - CET 4: 632; CET 6: 581</li>  
+                    <li>  - Hobby: Travel、Sports、King of Glory.....</li>
+                    <li>  - Volunteer for the 48th ICPC Finals (Asia Region)</li>
+                    <li>  - Operator of Shanghai University's QQ Universal Wall</li>
+                    <li>  - Contributor to the second session of Fudan University High School Summer Camp (The Convergence of AI and Philosophy)</li>
+                    <li>  - Original content on CSDN blog (as of October 2025) has garnered over 110,000 views</li>
+                </ul>
+            </section>
+        </main>
+        
+        <!-- 侧边栏 -->
+        <aside>
+            <div class="profile-card">
+                <img src="images/self.jpg" alt="朱俊枫" class="profile-img">
+                <h2 class="profile-name">Junfeng ZHU</h2>
+                <p class="profile-title">Shanghai University</p>
+                
+                <div class="profile-details">
+                    <p><i class="fas fa-map-marker-alt"></i> 📍Shanghai, China</p>
+                    <p><i class="fas fa-graduation-cap"></i> Master’s student in AI at SHU</p>
+                    <p><i class="fas fa-heart"></i> PR, DA, AI4SCI...</p>
+                </div>
+                
+                <div class="profile-details">
+                    <p><i class="fas fa-globe"></i> <a href="https://zhuai.blog.csdn.net/?type=blog" style="color: #3498db; text-decoration: none;">Blog</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="jzf458@shu.edu.cn" style="color: #3498db; text-decoration: none;">Email</a></p>
+                    <p><i class="fab fa-github"></i> <a href="https://github.com/J-Jzf?tab=repositories" style="color: #3498db; text-decoration: none;">Github</a></p>
+                    <p><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=r6SdGeEAAAAJ&hl=en&oi=sra" style="color: #3498db; text-decoration: none;">Google Scholar</a></p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fas fa-graduation-cap"></i></a>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 朱俊枫 - 个人主页</p>
+        </div>
+    </footer>
+    
+    <script>
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
