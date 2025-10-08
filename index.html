@@ -46,6 +46,24 @@
             font-size: 24px;
             font-weight: bold;
             color: #2c3e50;
+            position: relative;
+            overflow: hidden;
+            padding: 5px 0;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #3498db, transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .logo:hover::after {
+            left: 100%;
         }
         
         .nav-links {
@@ -98,6 +116,23 @@
             padding: 30px;
             margin-bottom: 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #9b59b6);
+            transition: left 0.5s ease;
+        }
+        
+        .content-section:hover::before {
+            left: 0;
         }
         
         .content-section:hover {
@@ -111,23 +146,7 @@
             margin-bottom: 20px;
             padding-bottom: 10px;
             position: relative;
-            overflow: hidden;
             border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background-color: #3498db;
-            transition: width 0.4s ease;
-        }
-        
-        .content-section:hover .section-title::after {
-            width: 100%;
         }
         
         /* 侧边栏样式 */
@@ -192,7 +211,7 @@
             text-align: center;
         }
         
-        .social-links {
+        /* .social-links {
             display: flex;
             justify-content: center;
             gap: 15px;
@@ -216,7 +235,7 @@
             background-color: #3498db;
             color: white;
             transform: translateY(-3px);
-        }
+        } */
         
         /* 新闻和出版物样式 */
         .news-item, .publication-item {
@@ -360,7 +379,7 @@
                 <h2 class="section-title">🪪Self-Intro</h2>
                 <p style="text-indent: 2em;">  Hi there! My name is Junfeng ZHU (朱俊枫).</p>
                 <p style="text-indent: 2em;">  I am currently a Master's student pursuing an academic degree in Computer Science and Technology at the School of Computer Science and Engineering, Shanghai University, holding a Bachelor's degree in Artificial Intelligence from Shanghai University. </p>
-                <p style="text-indent: 2em;">  My research interests lie in <strong>pattern recognition</strong>, <strong>data analysis</strong>, <strong>multimodal learning</strong>, <strong>domain adaptation learning</strong>, and <strong>AI4Sci</strong>, under the supervision of Professor <a href="https://scholar.google.com/citations?hl=en&user=Gf80gIIAAAAJ&view_op=list_works" target="_blank" style="color: #3498db; text-decoration: none;">Yuchun Fang</a>.</p>
+                <p style="text-indent: 2em;">  My research interests lie in <strong>Pattern Recognition</strong>, <strong>Data Analysis</strong>, <strong>Multimodal Learning</strong>, <strong>Domain Adaptation Learning</strong>, and <strong>AI4Sci</strong>, under the supervision of Professor <a href="https://scholar.google.com/citations?hl=en&user=Gf80gIIAAAAJ&view_op=list_works" target="_blank" style="color: #3498db; text-decoration: none;">Yuchun Fang</a>.</p>
             </section>
 
             <!-- 教育背景部分 -->
@@ -409,7 +428,7 @@
             
             <!-- 荣誉奖项部分 -->
             <section id="honors" class="content-section">
-                <h2 class="section-title">🎖Honors and Awards</h2>
+                <h2 class="section-title">🥇Honors and Awards</h2>
                 <ul style="list-style-type: none; padding-left: 0;">
                     <li>  - <strong>2025.05 | Meritorious Winner</strong>, Mathematical Contest in Modeling (MCM);</li>
                     <li>  - <strong>2025.04 | Third Prize</strong>, Huawei Software Elite Challenge;</li>
