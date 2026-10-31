@@ -42,7 +42,7 @@
             "🗞️Papers and Patents": "🗞️论文与专利",
             "Beyond CTC Spikes: LLM-Driven Gloss-Temporal Supervision for Continuous Sign Language Recognition": "CTC尖峰之外：面向连续手语识别的LLM驱动手语词-时间监督",
             "The 31th Conference on Empirical Methods in Natural Language Processing (EMNLP 2026). Main Conference. 2026 Oct 24-29. ACL.": "EMNLP，主会，2026年10月24日至29日，ACL。",
-            "Paper Link (Acl Anthology).": "论文链接（ACL文集）。",
+            "Paper Link (ACL Anthology)": "论文链接（ACL文集）",
             "CAAI-A, CCF-B, ICORE-A‌*‌‌ Conference": "CAAI-A、CCF-B、ICORE-A* 会议",
             "(Conference Link)": "（会议链接）",
             "Monocular Interacting-Hand Reconstruction with Multimodal Context Fusion and Spatial Attention": "基于多模态上下文融合与空间注意力的单目交互手重建",
