@@ -139,7 +139,7 @@
             "CV, MLLM, DA...": "CV、MLLM、DA...",
             "Email": "邮箱",
             "CSDN Blog": "CSDN博客",
-            "© 朱俊枫, Created: 2025.10 | Last updated: 2026.10": "© 朱俊枫，创建于：2025.10 | 最后更新：2026.10"
+            "© 朱俊枫, Created: 2025.10 | Last updated: 2026.11": "© 朱俊枫，创建于：2025.10 | 最后更新：2026.11"
         };
 
         function collectOriginalTextNodes() {
